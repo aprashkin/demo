@@ -1,0 +1,15 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="demo.App"
+             RequestedThemeVariant="Light">
+             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+
+    <Application.Styles>
+        <FluentTheme />
+    </Application.Styles>
+	<Application.Resources>
+		<SolidColorBrush x:Key="PrimaryColor" Color="#ffffff"/>
+		<SolidColorBrush x:Key="SecondaryColor" Color="#ffffe1"/>
+		<SolidColorBrush x:Key="AccentColor" Color="#ff9c1a"/>
+	</Application.Resources>
+</Application>

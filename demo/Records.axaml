@@ -1,0 +1,27 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" Width="500" Height="650"
+        x:Class="demo.Records"
+		x:CompileBindings="False"
+        Title="Records">
+	<StackPanel Spacing="10">
+		<TextBlock TextAlignment="Center" Text="Записи"/>
+		<ListBox x:Name="List" Width="450" Height="500">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<StackPanel>
+						<TextBlock Text="{Binding NameService}"/>
+						<TextBlock Text="{Binding FIO}"/>
+						<TextBlock Text="{Binding Email}"/>
+						<TextBlock Text="{Binding Phone}"/>
+						<TextBlock Text="{Binding Date}"/>
+						<TextBlock Text="{Binding Time}"/>
+					</StackPanel>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+		<Button Click="Back" HorizontalAlignment="Center" Content="Назад"/>
+	</StackPanel>
+</Window>

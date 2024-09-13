@@ -1,0 +1,70 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="demo.ServiceAdminWindow"
+        x:CompileBindings="False"
+        Title="ServiceAdminWindow">
+	<DockPanel>
+		<Border
+            DockPanel.Dock="Top"
+            Name="SearchPanel">
+			<StackPanel
+                HorizontalAlignment="Center"
+                Orientation="Horizontal"
+                Spacing="20">
+				<TextBox
+                    Name="SearchTextBox"
+                    Width="200"
+                    TextChanged="SearchTextBox_TextChanged"
+                    Watermark="Поиск:" />
+				<ComboBox
+                    Width="150"
+                    Name="SortingComboBox"
+                    SelectionChanged="SortingComboBox_SelectionChanged"
+                    PlaceholderText="Сортировка" />
+				<ComboBox
+                    Width="150"
+                    SelectionChanged="FilteringComboBox_SelectionChanged"
+                    Name="FilteringComboBox"
+                    PlaceholderText="Фильтрация" />
+				<Button Content="Записи клиентов" Click="Button_Click_1" />
+				<Button Content="+" Click="Button_Click_2"/>
+			<TextBlock Name="Error"/>
+			</StackPanel>
+		</Border>
+		<Border
+            DockPanel.Dock="Bottom"
+            Name="StatisticPanel">
+			<StackPanel
+                HorizontalAlignment="Center"
+                Orientation="Horizontal">
+				<TextBlock Name="StatisticTextBlock">Статистика</TextBlock>
+			</StackPanel>
+		</Border>
+		<Border Name="MainPanel">
+			<ListBox Name="ServiceListBox">
+				<ListBox.ItemTemplate>
+					<DataTemplate>
+						<StackPanel Orientation="Horizontal" Spacing="20">
+							<Image Source="{Binding Photokartochka}" Width="100" Height="100"/>
+							<StackPanel Orientation="Vertical">
+								<TextBlock Text="{Binding ServiceName}"/>
+								<StackPanel Orientation="Horizontal" Spacing="5">
+									<TextBlock Text="{Binding OldCost}" TextDecorations="Strikethrough"/>
+									<TextBlock Text="{Binding SeviceCostPerSeconds}" />
+								</StackPanel>
+								<TextBlock Text="{Binding ServiceDiscount}"/>
+								<StackPanel Orientation="Horizontal">
+									<Button Name="EditButton" Click="EditButton_Click" Tag="{Binding ServiceID}">Редактировать</Button>
+									<Button Name="RemoveButton" Click="RemoveButton_Click" Tag="{Binding ServiceID}">Удалить</Button>
+								</StackPanel>
+							</StackPanel>
+						</StackPanel>
+					</DataTemplate>
+				</ListBox.ItemTemplate>
+			</ListBox>
+		</Border>
+	</DockPanel>
+</Window>

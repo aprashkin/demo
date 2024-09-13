@@ -1,0 +1,34 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="demo.AddEditWindow"
+		x:CompileBindings="False"
+        Title="AddEditWindow">
+	<StackPanel>
+		<TextBlock Text="Название услуги"/>
+		<TextBox Name="ServiceNameTextBox"/>
+
+		<TextBlock Text="Стоимость"/>
+		<TextBox Name="ServiceCostTextBox"/>
+
+		<TextBlock Text="Длительность (секунды)"/>
+		<TextBox Name="ServiceDurationTextBox"/>
+
+		<TextBlock Text="Скидка (%)"/>
+		<TextBox Name="ServiceDiscountTextBox"/>
+
+		<TextBlock Text="Описание"/>
+		<TextBox Name="ServiceDescriptionTextBox"/>
+
+		<TextBlock Text="Основное изображение"/>
+		<Image Name="ServiceImagePreview" Width="100" Height="100"/>
+		<Button Click="OnButtonClick" Content="Выбрать изображение"/>
+		<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10">
+		<Button Click="OnButtonClick1" Content="Сохранить"/>
+		<Button Click="OnButtonClick2" Content="Отмена"/>
+		</StackPanel>
+		<TextBlock Name="Error"/>
+	</StackPanel>
+</Window>
